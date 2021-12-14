@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmPage implements OnInit {
 
+  modif!: boolean;
+
   constructor() { }
 
   ngOnInit() {
+    this.modif = false;
   }
 
 }

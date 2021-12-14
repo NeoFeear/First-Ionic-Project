@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>film</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tab/films"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Film</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-button (click)="modif = !modif">Rendre modifiable</ion-button>
 
+  <div *ngIf="!modif">
+    J'affiche le détail
+  </div>
+
+  <div *ngIf="modif">
+    Je peux modifier
+  </div>
 </ion-content>
