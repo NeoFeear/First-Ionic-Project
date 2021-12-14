@@ -8,6 +8,28 @@
     <h2>Création d'un nouveau film</h2>
     <ion-button routerLink="/tabs/films/new">Créer un film</ion-button>
 
-    <h2>List des films</h2>
-    <img src="/assets/img/noimg.jpg" routerLink="/tabs/films/test">
+    <h2>Liste des films</h2>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="4" *ngFor="let film of films">
+                <ion-list [routerLink]="['/tabs/films/', film.id]">
+                    <ion-item>
+                        <img [src]="film.img" [alt]="film.title">
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>{{film.title}}</ion-label>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>{{film.param1}}</ion-label>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-label>{{film.param2}}</ion-label>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
