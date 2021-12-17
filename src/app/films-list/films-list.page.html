@@ -12,23 +12,12 @@
     <ion-grid>
         <ion-row>
             <ion-col size="4" *ngFor="let film of films">
-                <ion-list [routerLink]="['/tabs/films/', film.id]">
-                    <ion-item>
-                        <img [src]="film.img" [alt]="film.title">
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-label>{{film.title}}</ion-label>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-label>{{film.param1}}</ion-label>
-                    </ion-item>
-
-                    <ion-item>
-                        <ion-label>{{film.param2}}</ion-label>
-                    </ion-item>
-                </ion-list>
+                <ion-card [routerLink]="['/tabs/films/', film.id]">
+                    <ion-img [src]="film.pictureLink" [alt]="film.title" style="width: 130px; height: 180px;"></ion-img>
+                    <!-- <ion-card-header>
+                        <ion-card-title>{{film.title}}</ion-card-title>
+                    </ion-card-header> -->
+                </ion-card>
             </ion-col>
         </ion-row>
     </ion-grid>

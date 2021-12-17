@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FilmService } from '../service/film.service';
 
 @Component({
   selector: 'app-films-list',
@@ -6,8 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./films-list.page.scss'],
 })
 export class FilmsListPage implements OnInit {
+  films!: any;
 
-  films = [
+  constructor(
+    private Film: FilmService
+  ) { }
+
+  ngOnInit(): void {
+    this.Film.getAllFilms().subscribe((data: any) => {
+      this.films = data;
+    });
+  }
+
+  /* films = [
     {
       id: 1,
       title: 'titre 1',
@@ -36,11 +48,6 @@ export class FilmsListPage implements OnInit {
       param1: 'param 1',
       param2: 'param 2'
     }
-  ];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ]; */
 
 }
